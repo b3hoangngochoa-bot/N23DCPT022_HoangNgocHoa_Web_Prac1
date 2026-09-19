@@ -3,7 +3,7 @@
 | Thông tin       | Chi tiết       |
 | --------------- | -------------- |
 | Họ và tên       | Hoàng Ngọc Hoà |
-| Mã số sinh viên | N23DCPTT022    |
+| Mã số sinh viên | N23DCPT022     |
 | Lớp             | D23CQPTUD01-N  |
 
 ## Mô tả dự án
@@ -48,12 +48,10 @@ npm run dev
 
 ## Các lệnh hữu ích
 
-| Lệnh | Mục đích |
-| --- | --- |
-| `npm run dev` | Chạy ứng dụng ở môi trường phát triển. |
-| `npm run lint` | Kiểm tra quy tắc mã nguồn bằng ESLint. |
-| `npm run build` | Tạo bản build production. |
-| `npm run start` | Chạy bản build production. |
+- `npm run dev`: Chạy ứng dụng ở môi trường phát triển.
+- `npm run lint`: Kiểm tra quy tắc mã nguồn bằng ESLint.
+- `npm run build`: Tạo bản build production.
+- `npm run start`: Chạy bản build production.
 
 ## Cấu trúc thư mục chính
 
