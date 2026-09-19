@@ -35,12 +35,12 @@ export default async function BlogDetailPage({ params }) {
     <>
       <Header />
 
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <main className="tech-surface mx-3 my-5 max-w-3xl rounded-2xl px-4 py-8 sm:mx-auto sm:my-12 sm:px-6 sm:py-16 lg:px-8">
 
         {/* ── Back link ── */}
         <Link
           href="/"
-          className="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-400 hover:text-zinc-900 uppercase tracking-widest transition-colors duration-200 group mb-10"
+          className="group mb-10 inline-flex min-h-11 items-center gap-1.5 py-2 text-xs font-mono uppercase tracking-widest text-zinc-400 transition-colors duration-200 hover:text-zinc-900"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export default async function BlogDetailPage({ params }) {
         </Link>
 
         {/* ── Post header ── */}
-        <header className="mb-10 pb-8 border-b border-zinc-100">
+        <header className="mb-10 pb-8 border-b border-zinc-300/70">
           {/* Post number */}
           <span className="text-[11px] font-mono text-zinc-400 tracking-widest uppercase mb-4 block">
             #{String(post.id).padStart(2, "0")} &nbsp;·&nbsp; Article
@@ -92,18 +92,18 @@ export default async function BlogDetailPage({ params }) {
         </article>
 
         {/* ── Footer row ── */}
-        <footer className="mt-12 pt-8 border-t border-zinc-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
+        <footer className="mt-12 pt-8 border-t border-zinc-300/70 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
           {/* Tags */}
           <div className="flex flex-wrap gap-2">
             <Badge label="#blog" />
-            <Badge label={`#post-${post.id}`} color="indigo" />
-            <Badge label={`#user-${post.userId}`} color="green" />
+            <Badge label={`#post-${post.id}`} color="copper" />
+            <Badge label={`#user-${post.userId}`} color="olive" />
           </div>
 
           {/* Back button */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-black text-white text-xs font-semibold uppercase tracking-wide px-5 py-2.5 rounded-lg transition-colors duration-200 shrink-0"
+            className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-zinc-900 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white transition-colors duration-200 hover:bg-black"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -121,8 +121,8 @@ export default async function BlogDetailPage({ params }) {
       </main>
 
       {/* ── Footer ── */}
-      <div className="border-t border-zinc-100">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <div className="tech-footer border-t">
+        <div className="mx-auto flex max-w-3xl flex-col items-start gap-2 px-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <span className="text-xs font-mono text-zinc-400">MYBLOG © 2026</span>
           <span className="text-xs text-zinc-400">Built with Next.js</span>
         </div>
@@ -130,4 +130,3 @@ export default async function BlogDetailPage({ params }) {
     </>
   );
 }
-

@@ -22,7 +22,7 @@ export default async function HomePage() {
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* ── Hero section ── */}
-        <section className="py-14 sm:py-20 border-b border-zinc-100">
+        <section className="tech-hero border-b border-zinc-300/70 py-12 sm:py-20">
           <p className="text-[11px] font-mono text-zinc-400 tracking-widest uppercase mb-4">
             Tech Blog
           </p>
@@ -35,7 +35,7 @@ export default async function HomePage() {
         </section>
 
         {/* ── Posts grid ── */}
-        <section className="py-10 sm:py-14">
+        <section id="articles" className="scroll-mt-16 py-10 sm:py-14">
           <div className="flex items-center justify-between mb-8">
             <span className="text-xs font-mono text-zinc-400 tracking-widest uppercase">
               Latest Posts — {posts.slice(0, 12).length} articles
@@ -52,8 +52,8 @@ export default async function HomePage() {
       </main>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-zinc-100 mt-6">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+      <footer className="tech-footer border-t mt-6">
+        <div className="mx-auto flex max-w-5xl flex-col items-start gap-2 px-4 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <span className="text-xs font-mono text-zinc-400">MYBLOG © 2026</span>
           <span className="text-xs text-zinc-400">Built with Next.js</span>
         </div>

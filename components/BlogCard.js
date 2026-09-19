@@ -1,6 +1,6 @@
 export default function BlogCard({ post }) {
   return (
-    <article className="group flex flex-col bg-white border border-zinc-100 rounded-xl p-6 hover:border-zinc-300 hover:shadow-md transition-all duration-200">
+    <article className="tech-card group flex flex-col rounded-xl border p-5 transition-all duration-200 sm:p-6">
       {/* Post number */}
       <span className="text-[11px] font-mono text-zinc-400 tracking-widest uppercase mb-3">
         #{String(post.id).padStart(2, "0")}
@@ -17,11 +17,11 @@ export default function BlogCard({ post }) {
       </p>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-4 border-t border-zinc-100">
+      <div className="flex items-center justify-between pt-4 border-t border-zinc-300/60">
         <span className="text-xs text-zinc-400 font-mono">User {post.userId}</span>
         <a
           href={`/blog/${post.id}`}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-900 hover:text-black group/link"
+          className="-my-2 -mr-2 inline-flex min-h-11 items-center gap-1.5 px-2 text-xs font-semibold text-zinc-900 hover:text-black group/link"
         >
           Read More
           <svg
@@ -38,4 +38,4 @@ export default function BlogCard({ post }) {
       </div>
     </article>
   );
-}
+}

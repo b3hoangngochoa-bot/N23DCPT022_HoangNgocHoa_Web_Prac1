@@ -8,13 +8,131 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #ffffff;
-  color: #111111;
+  background-color: #e8e5de;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Cg fill='none' stroke='%23282b28' stroke-opacity='.18' stroke-width='1'%3E%3Cpath d='M0 72h92V0m268 36H230v74h-60m-170 132h74v118m286-84H248v84h-78'/%3E%3Cpath d='M0 156h42v42h92v-54h88v54h138'/%3E%3C/g%3E%3Cg fill='%23bf5f2d'%3E%3Ccircle cx='92' cy='72' r='3'/%3E%3Ccircle cx='230' cy='36' r='3'/%3E%3Ccircle cx='42' cy='198' r='3'/%3E%3Ccircle cx='248' cy='276' r='3'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle at 86% -8%, rgb(191 95 45 / 0.3), transparent 31rem),
+    radial-gradient(circle at 8% 68%, rgb(36 40 36 / 0.16), transparent 28rem),
+    linear-gradient(125deg, #f1eee7 0%, #e4e1da 48%, #ece8e0 100%);
+  background-size: 360px 360px, 100% 100%, 100% 100%, 100% 100%;
+  background-attachment: fixed;
+  color: #20231f;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+/* Shared surfaces keep text readable while letting the technical backdrop show through. */
+.tech-nav {
+  border-color: rgb(32 35 31 / 0.17) !important;
+  background: linear-gradient(100deg, rgb(241 238 231 / 0.88), rgb(225 222 214 / 0.78)) !important;
+  box-shadow: 0 0.6rem 1.8rem rgb(42 35 27 / 0.08);
+}
+
+.tech-surface {
+  border: 1px solid rgb(32 35 31 / 0.17);
+  background: linear-gradient(125deg, rgb(248 245 238 / 0.84), rgb(231 227 218 / 0.72));
+  box-shadow: 0 1.25rem 3.5rem rgb(42 35 27 / 0.13), inset 0 1px rgb(255 255 255 / 0.58);
+  backdrop-filter: blur(16px);
+}
+
+.tech-card {
+  position: relative;
+  overflow: hidden;
+  border-color: rgb(32 35 31 / 0.15) !important;
+  background: linear-gradient(145deg, rgb(249 246 239 / 0.88), rgb(234 230 221 / 0.72)) !important;
+  box-shadow: 0 0.7rem 1.7rem rgb(42 35 27 / 0.07), inset 0 1px rgb(255 255 255 / 0.7);
+  backdrop-filter: blur(12px);
+}
+
+.tech-card::before {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  width: 3rem;
+  height: 2px;
+  content: "";
+  background: #bf5f2d;
+  transform: scaleX(0.45);
+  transform-origin: left;
+  transition: transform 200ms ease;
+}
+
+.tech-card:hover {
+  border-color: rgb(116 66 38 / 0.42) !important;
+  box-shadow: 0 1.35rem 2.8rem rgb(42 35 27 / 0.16), inset 0 1px rgb(255 255 255 / 0.8);
+}
+
+.tech-card:hover::before {
+  transform: scaleX(1);
+}
+
+.tech-footer {
+  border-color: rgb(32 35 31 / 0.15) !important;
+  background: rgb(235 231 223 / 0.58);
+  backdrop-filter: blur(10px);
+}
+
+/* Industrial-tech depth: circuit traces, copper contact points, and a layered hero panel. */
+.tech-hero {
+  isolation: isolate;
+  position: relative;
+}
+
+.tech-hero::before {
+  position: absolute;
+  z-index: -1;
+  top: -3rem;
+  right: -7rem;
+  width: min(48vw, 40rem);
+  aspect-ratio: 1;
+  content: "";
+  clip-path: polygon(26% 0, 100% 0, 100% 74%, 73% 100%, 0 100%, 0 26%);
+  border: 1px solid rgb(32 35 31 / 0.18);
+  background-image:
+    linear-gradient(135deg, transparent 0 39%, rgb(32 35 31 / 0.12) 39% 39.4%, transparent 39.4% 61%, rgb(191 95 45 / 0.32) 61% 61.5%, transparent 61.5%),
+    repeating-linear-gradient(90deg, rgb(32 35 31 / 0.1) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(0deg, rgb(32 35 31 / 0.08) 0 1px, transparent 1px 34px),
+    radial-gradient(circle at 62% 30%, rgb(191 95 45 / 0.32), transparent 16rem);
+  box-shadow: inset 0 0 0 1rem rgb(255 255 255 / 0.1), 0 2rem 5rem rgb(42 35 27 / 0.13);
+}
+
+.tech-hero::after {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  content: "FIELD NOTES / 2026";
+  color: rgb(32 35 31 / 0.48);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  writing-mode: vertical-rl;
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .tech-hero::before {
+    top: -2rem;
+    right: -3rem;
+    width: 20rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .tech-hero::before {
+    display: none;
+  }
+
+  .tech-hero::after {
+    display: none;
+  }
 }
 
 /* line-clamp helpers */

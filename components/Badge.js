@@ -1,7 +1,7 @@
 const variants = {
-  gray: "bg-zinc-100 text-zinc-600",
-  indigo: "bg-indigo-100 text-indigo-700",
-  green: "bg-emerald-100 text-emerald-700",
+  gray: "bg-stone-200/80 text-stone-700",
+  copper: "bg-orange-100 text-orange-800",
+  olive: "bg-lime-100 text-lime-800",
   red: "bg-red-100 text-red-700",
 };
 
