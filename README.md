@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Thông tin sinh viên
 
-## Getting Started
+| Thông tin       | Chi tiết       |
+| --------------- | -------------- |
+| Họ và tên       | Hoàng Ngọc Hoà |
+| Mã số sinh viên | N23DCPTT022    |
+| Lớp             | D23CQPTUD01-N  |
 
-First, run the development server:
+## Mô tả dự án
 
-```bash
+MYBLOG là website hiển thị các bài viết công nghệ. Danh sách bài viết và nội dung chi tiết được lấy từ JSONPlaceholder API. Giao diện sử dụng phong cách _industrial tech_ với nền mạch điện tinh tế, các bề mặt bán trong suốt và khả năng hiển thị phù hợp đa dạng trên desktop, tablet và mobile.
+
+## Chức năng chính
+
+- Hiển thị danh sách 12 bài viết mới nhất theo dạng lưới responsive.
+- Xem trang chi tiết bài viết theo route động `/blog/[id]`.
+- Tạo metadata SEO động theo nội dung từng bài viết.
+- Điều hướng Home, About và Articles; làm nổi bật trang đang được truy cập.
+- Trang About giới thiệu ngắn về blog.
+- Thiết kế responsive và tối ưu thao tác chạm trên thiết bị di động.
+
+## Công nghệ sử dụng
+
+- [Next.js 16](https://nextjs.org/) với App Router.
+- [React 19](https://react.dev/).
+- [Tailwind CSS 4](https://tailwindcss.com/) cho giao diện.
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) làm nguồn dữ liệu mẫu.
+
+## Cài đặt và chạy dự án
+
+### Yêu cầu môi trường
+
+- Node.js `20.9.0` trở lên.
+- npm.
+
+### Các bước thực hiện
+
+````bash
+# Di chuyển vào thư mục dự án
+cd project
+
+# Cài đặt dependencies
+npm install
+
+# Khởi động môi trường phát triển
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Các lệnh hữu ích
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Lệnh | Mục đích |
+| --- | --- |
+| `npm run dev` | Chạy ứng dụng ở môi trường phát triển. |
+| `npm run lint` | Kiểm tra quy tắc mã nguồn bằng ESLint. |
+| `npm run build` | Tạo bản build production. |
+| `npm run start` | Chạy bản build production. |
 
-## Learn More
+## Cấu trúc thư mục chính
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+project/
+├── app/
+│   ├── about/             # Trang giới thiệu
+│   ├── blog/[id]/         # Trang chi tiết bài viết
+│   ├── globals.css        # Kiểu dáng dùng chung
+│   ├── layout.js          # Layout gốc
+│   └── page.js            # Trang chủ
+├── components/            # Các React component tái sử dụng
+├── public/                # Tài nguyên tĩnh
+└── package.json           # Cấu hình scripts và dependencies
+````
